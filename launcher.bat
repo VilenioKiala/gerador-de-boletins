@@ -6,7 +6,7 @@ cd #
 
 cls
 
-python excel.py
+python app.py
 
 
 
