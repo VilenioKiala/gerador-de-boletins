@@ -26,11 +26,11 @@ def criarBoletim(dados):
 	ws.merge_cells(start_row=3,end_row=3,start_column=1,end_column=(int(qnt_nota)-1))
 	ws.merge_cells(start_row=4,end_row=4,start_column=1,end_column=(int(qnt_nota)-1))
 
-	for i in range(1,(qnt_nota)):
-		ws.cell(row=5,column=i,value=dados['caderneta'][i]['disciplina'].upper())
+	for i in range(0,(qnt_nota)):
+		ws.cell(row=5,column=(i+1),value=dados['caderneta'][i-1]['disciplina'].upper())
 
-	for j in range(1,(qnt_nota)):
-		ws.cell(row=6,column=j,value=dados['caderneta'][j]["nota"])
+	for j in range(0,(qnt_nota)):
+		ws.cell(row=6,column=(j+1),value=dados['caderneta'][j-1]["nota"])
 
 
 	filename = "boletim" + created_at + ".xlsx"
